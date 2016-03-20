@@ -1,4 +1,5 @@
-/* lab7op.cpp : 
+
+/* lab7op.cpp :
 Із заданого рядка символів вилучити слова, довжина яких менша, за вказану користувачем.
 */
 
@@ -11,17 +12,35 @@
 #include <string.h>
 #define DEL  " .,:;\n\t"
 #define N 1024
-#include <string.h>
+
+using namespace std;
+
+char s[N], *word;
+int i, j, k, len, n;
+
+void input();
+void detect(char*);
+void output(char*);
 
 int main()
 {
-	char s[N],
-		*word;
-	int i, j, k, len, n;
+	input();
+	detect(s);
+	output(s);
+	_getch();
+	return 0;
+}
+
+void input()
+{
 	printf("Enter your phrase \n ");
 	fgets(s, N, stdin);
 	printf("\nEnter n = ");
 	scanf_s("%d", &n);
+}
+
+void detect(char* s)
+{
 	i = k = 0;
 	while (s[i])
 	{
@@ -37,7 +56,8 @@ int main()
 		}
 	}
 	s[k] = '\0';
+}
+void output(char*)
+{
 	puts(s);
-	_getch();
-	return 0;
 }
