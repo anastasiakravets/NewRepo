@@ -33,7 +33,7 @@ int main()
 
 void input()
 {
-	printf("Enter your phrase \n ");
+	printf("Enter your phrase \n");
 	fgets(s, N, stdin);
 	printf("\nEnter n = ");
 	scanf_s("%d", &n);
