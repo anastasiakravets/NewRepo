@@ -15,7 +15,7 @@
 
 using namespace std;
 
-char s[N], *word;
+char s[N];
 int i, j, k, len, n;
 
 void input();
@@ -45,7 +45,7 @@ void detect(char* s)
 	while (s[i])
 	{
 		while (s[i] && strchr(DEL, s[i]))
-			s[k++] = s[i++];
+			i++;
 		j = i;
 		while (s[i] && !strchr(DEL, s[i]))
 			i++;
@@ -53,6 +53,7 @@ void detect(char* s)
 		{
 			strncpy(s + k, s + j, len);
 			k += len;
+			s[k++] = ' ';
 		}
 	}
 	s[k] = '\0';
